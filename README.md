@@ -1,6 +1,9 @@
 # Frontend Mentor - NFT preview card component solution
 
-This is a solution to the [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Preview
+![desktop-design](https://github.com/IryDev/NFT-preview-card-compontent/assets/86270481/8d1fa9f4-c63a-436d-b39f-6ea505766983)
 
 ## Table of contents
 
@@ -47,14 +50,13 @@ Improve my glassmorph effect
 
 ### Continued development
 
-Keep on learn how to make morph effect with box shadow in css
+Keep on learn how to make morph effect with box shadow in css, until now i wanted to only reproduce the design that i saw, i think if i want to improve i need to make better things and train to create new ones.
 
 ### Useful resources
 
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
