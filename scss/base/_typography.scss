@@ -1,0 +1,19 @@
+@use "../abstracts/variables";
+
+body {
+  font-size: 18px;
+}
+
+h1 {
+  font: variables.$heading-1;
+  font-weight: 600;
+}
+
+p {
+  font: variables.$body-text;
+  font-weight: 400;
+}
+
+span {
+  font-weight: 500;
+}

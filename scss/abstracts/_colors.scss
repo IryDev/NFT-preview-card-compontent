@@ -1,0 +1,9 @@
+$Soft-blue: hsl(215, 51%, 70%);
+$Cyan: hsl(178, 100%, 50%);
+$Very-dark-blue-main: hsl(217, 54%, 11%); /*  (main BG) */
+$Very-dark-blue-line: hsl(215, 32%, 27%); /* (line BG)*/
+$White: hsl(0, 0%, 100%);
+$Light-salmon: #fdd3bd;
+$Razzmatazz: #ff0058;
+$bckg-gradient: linear-gradient(-45deg, $Very-dark-blue-main, $Very-dark-blue-main, $White);
+$main-gradient: linear-gradient(-45deg, $Razzmatazz, $Light-salmon);

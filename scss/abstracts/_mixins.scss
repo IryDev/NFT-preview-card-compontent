@@ -1,0 +1,32 @@
+@mixin flex($justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
+
+@mixin box-pseudo {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #fdd3bd, #ff0058);
+  transform: skewX(20deg);
+}
+
+@mixin span-pseudo($x, $y){
+    content: "";
+  position: absolute;
+  $x: 0;
+  $y: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: moving 2s linear infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}

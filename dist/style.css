@@ -1,0 +1,384 @@
+/*  (main BG) */
+/* (line BG)*/
+@keyframes moving {
+  0%, 100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes background {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+body {
+  background: linear-gradient(-45deg, hsl(217, 54%, 11%), hsl(217, 54%, 11%), hsl(0, 0%, 100%));
+  background-size: 200% 200%;
+  font-family: "Outfit", sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  animation: background 20s linear infinite;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+html,
+body,
+div,
+span,
+h1, h2, h3, h4, h5, h6,
+p,
+a,
+img,
+ul, ol,
+li,
+form,
+label,
+input,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-size: 18px;
+}
+
+h1 {
+  font: 1.3rem "Outfit", sans-serif;
+  font-weight: 600;
+}
+
+p {
+  font: 1rem "Outfit", sans-serif;
+  font-weight: 400;
+}
+
+span {
+  font-weight: 500;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  transform: skewX(20deg);
+}
+
+footer {
+  color: hsl(0, 0%, 100%);
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #fdd3bd, #ff0058);
+  transform: skewX(20deg);
+  left: 0;
+  z-index: -1;
+}
+
+footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #fdd3bd, #ff0058);
+  transform: skewX(20deg);
+  filter: blur(30px);
+  left: 0;
+  z-index: -1;
+}
+
+footer:hover::after,
+footer:hover::before {
+  transform: translateX(100%) skewX(20deg);
+}
+
+footer:hover {
+  transform: skewX(0deg);
+}
+
+a {
+  color: #ff0058;
+}
+
+.card-image {
+  position: relative;
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.card-image div {
+  position: absolute;
+  background-color: rgba(253, 211, 189, 0.5882352941);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s all;
+}
+
+.card-image div:hover {
+  opacity: 1;
+}
+
+.card-content h1 {
+  color: white;
+  margin: 0.5rem 0;
+}
+
+.card-content h1:hover {
+  color: #fdd3bd;
+}
+
+.box {
+  position: relative;
+  width: 320px;
+  height: 600px;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #fdd3bd, #ff0058);
+  transform: skewX(20deg);
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #fdd3bd, #ff0058);
+  transform: skewX(20deg);
+  filter: blur(30px);
+}
+
+.box:hover::before,
+.box:hover::after {
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+}
+
+.box:hover .content {
+  transform: skew(0deg);
+}
+
+.box > span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.box > span::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: moving 2s linear infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.box:hover > span::before {
+  top: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+.box > span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: moving 2s linear infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  animation-delay: 1s;
+}
+
+.box:hover > span::after {
+  bottom: 20px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+.content {
+  z-index: 1;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.05);
+  height: 500px;
+  max-width: 300px;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transform: skewX(-10deg);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info .eth p {
+  font-weight: 500;
+  color: #ff0058;
+}
+
+.info .eth,
+.info div {
+  display: flex;
+  align-items: center;
+}
+
+.info div img {
+  margin: 0.3rem;
+}
+
+.line {
+  width: 100%;
+  height: 0.1px;
+  background-color: hsl(215, 32%, 27%);
+  margin: 0.5rem 0;
+}
+
+.footer-card {
+  display: flex;
+  align-items: center;
+}
+
+.footer-card img {
+  width: 40px;
+  z-index: 20;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.074);
+  border-radius: 100%;
+}
+
+.footer-card span {
+  color: hsl(0, 0%, 100%);
+  font-weight: 400;
+}
+
+.footer-card span:hover {
+  color: #fdd3bd;
+}
+
+.footer-card div {
+  position: relative;
+  border-radius: 100%;
+}
+
+.footer-card div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(-45deg, #ff0058, #fdd3bd);
+  border-radius: 100%;
+}
+
+.footer-card div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(-45deg, #ff0058, #fdd3bd);
+  border-radius: 100%;
+  filter: blur(3px);
+}/*# sourceMappingURL=style.css.map */

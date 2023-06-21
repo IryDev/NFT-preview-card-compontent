@@ -1,0 +1,46 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  transform: skewX(20deg);
+}
+
+footer{
+  color: colors.$White;
+}
+
+footer::before {
+  @include mixins.box-pseudo;
+  left: 0;
+  z-index: -1;
+}
+
+footer::after {
+  @include mixins.box-pseudo;
+  filter: blur(30px);
+  left: 0;
+  z-index: -1;
+}
+
+footer:hover::after,
+footer:hover::before {
+  transform: translateX(100%) skewX(20deg);
+}
+
+footer:hover {
+  transform: skewX(0deg);
+}
+
+a {
+  color: #ff0058;
+}

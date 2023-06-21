@@ -1,0 +1,191 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.card-image {
+  position: relative;
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.card-image div {
+  position: absolute;
+  background-color: #fdd3bd96;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s all;
+}
+
+.card-image div:hover {
+  opacity: 1;
+}
+
+.card-content h1 {
+  color: white;
+  margin: 0.5rem 0;
+}
+
+.card-content h1:hover {
+  color: colors.$Light-salmon;
+}
+
+.box {
+  position: relative;
+  width: 320px;
+  height: 600px;
+  transition: 0.5s;
+  @include mixins.flex(center);
+}
+
+.box::before {
+  @include mixins.box-pseudo;
+}
+
+.box::after {
+  @include mixins.box-pseudo;
+  filter: blur(30px);
+}
+
+.box:hover::before,
+.box:hover::after {
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+}
+
+.box:hover .content {
+  transform: skew(0deg);
+}
+
+.box > span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.box > span::before {
+  @include mixins.span-pseudo(left, bottom);
+}
+
+.box:hover > span::before {
+  top: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+.box > span::after {
+  @include mixins.span-pseudo(bottom, right);
+  animation-delay: 1s;
+}
+
+.box:hover > span::after {
+  bottom: 20px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+.content {
+  z-index: 1;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.05);
+  height: 500px;
+  max-width: 300px;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transform: skewX(-10deg);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info .eth p {
+  font-weight: 500;
+  color: colors.$Razzmatazz;
+}
+
+.info .eth,
+.info div {
+  display: flex;
+  align-items: center;
+}
+
+.info div img {
+  margin: 0.3rem;
+}
+
+.line {
+  width: 100%;
+  height: 0.1px;
+  background-color: colors.$Very-dark-blue-line;
+  margin: variables.$margin-text;
+}
+
+.footer-card {
+  display: flex;
+  align-items: center;
+}
+
+.footer-card img {
+  width: 40px;
+  z-index: 20;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.074);
+  border-radius: 100%;
+}
+
+.footer-card span {
+  color: colors.$White;
+  font-weight: 400;
+}
+
+.footer-card span:hover {
+  color: colors.$Light-salmon;
+}
+
+.footer-card div {
+  position: relative;
+  border-radius: 100%;
+}
+
+.footer-card div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: colors.$main-gradient;
+  border-radius: 100%;
+}
+
+.footer-card div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: colors.$main-gradient;
+  border-radius: 100%;
+  filter: blur(3px);
+}
